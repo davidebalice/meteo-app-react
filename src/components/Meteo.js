@@ -3,6 +3,7 @@ import Logo from "../asset/logoReact.png";
 import OpenMeteo from "../asset/open-meteo.png";
 import Result from "./Result";
 import Input from "./Input";
+import Select from "./Select";
 
 function getWeatherIcon(wmoCode) {
   const icons = new Map([
@@ -122,6 +123,15 @@ const App = () => {
     }
   };
 
+  const selectLocation = (e) => {
+    setData((prevState) => ({
+      ...prevState,
+      location: e.target.value,
+      search: !data.search,
+      error: "",
+    }));
+  };
+
   useEffect(() => {
     setData((prevState) => ({
       ...prevState,
@@ -160,11 +170,16 @@ const App = () => {
         </h4>
       </p>
       {data.error && <h4 className="error">{data.error}</h4>}
-      <p>
-        <Input
+      <h4>Insert location or select a favorite</h4>
+      <p className="inputContainer">
+      <Input
           location={data.location}
           onChangeLocation={setLocation}
           onSearch={setSearch}
+        />
+        <Select
+          location={data.location}
+          onChangeLocation={selectLocation}
         />
       </p>
       {data.isLoading && <p className="loader">Loading...</p>}

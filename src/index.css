@@ -31,6 +31,12 @@ body {
   left: 0;
 }
 
+@media screen and (max-width: 670px) {
+  .header {
+    display: none;
+  }
+}
+
 .dataContainer {
   display: flex;
   margin: 0 auto;
@@ -40,7 +46,7 @@ body {
   text-align: center;
   line-height: 30px;
   color: #fff;
-  width: 60%;
+  width: 70%;
   max-width: 100%;
   gap: 4rem;
   padding: 6rem 0;
@@ -51,12 +57,18 @@ body {
   box-shadow: 1px 4px 15px 0px rgba(0, 0, 0, 0.53);
 }
 
-.date{
-  font-size:14px
+@media screen and (max-width: 1600px) {
+  .dataContainer {
+    width: 90%;
+  }
 }
 
-.minMax{
-  font-size:14px !important
+.date {
+  font-size: 14px;
+}
+
+.minMax {
+  font-size: 14px !important;
 }
 
 h1 {
@@ -73,11 +85,19 @@ h2 {
 
 .logo {
   width: 100px;
+  height: auto;
 }
 
 .logoContainer {
   display: flex;
   gap: 40px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 input {
@@ -87,10 +107,24 @@ input {
   background-color: #fff;
   padding: 1.6rem 3.2rem;
   border: none;
-  width: 32rem;
+  width: 220px;
 }
 
 input:focus {
+  outline: 2px solid #222;
+}
+
+select {
+  font-family: inherit;
+  color: #333;
+  font-size: 2rem;
+  background-color: #fff;
+  padding: 1.6rem 3.2rem;
+  border: none;
+  width: 250px;
+}
+
+select:focus {
   outline: 2px solid #222;
 }
 
@@ -118,6 +152,7 @@ button:hover {
   display: flex;
   gap: 2.4rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .day {
