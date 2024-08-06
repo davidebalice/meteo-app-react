@@ -1,5 +1,5 @@
-Meteo app developed in React
-This app use open-meteo.com api free tier
+Meteo app developed in React.
+This app use open-meteo.com api free tier.
 
 Demo link:
 
